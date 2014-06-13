@@ -1,0 +1,28 @@
+<h1>Edit <%= @project.name %></h1>
+
+<%= form_for(@project) do |f| %>
+  <div>
+    <%= f.label(:name, 'Edit name') %>
+    <%= f.text_field(:name) %>
+  </div>
+
+  <div>
+      <%= f.label(:client, 'Edit client') %>
+      <%= f.text_field(:client) %>
+  </div>
+
+  <div>
+      <%= f.label(:description, 'Edit description') %>
+      <%= f.text_field(:description) %>
+  </div>
+
+  <div>
+      <%= f.label(:completed, 'Completed?') %>
+      <%= f.check_box(:completed) %>
+  </div>
+
+  <div>
+      <%= f.submit('Update') %>
+  </div>
+
+<% end %>

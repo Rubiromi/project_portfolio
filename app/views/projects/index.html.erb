@@ -1,0 +1,15 @@
+<h1>Project Portfolio Main</h1>
+<h2>Showing <b><%= pluralize(@projects.count, 'Project') %></b></h2>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= link_to(project.name, project_path(project.id)) %>
+      <%= link_to(project.client, project_path(project.id)) %>
+      <%= link_to(project.description, project_path(project.id)) %>
+      <%= link_to(project.completed, project_path(project.id)) %>
+       :<%= link_to('Edit', edit_project_path(project.id)) %>
+       :<%= link_to('Delete', project_path(project.id), method: :delete, 'data-confirm' => 'Are you sure to delete this project?') %>
+    </li>
+    <% end %>
+</ul>
