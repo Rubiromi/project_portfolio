@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update_attributes(project.params)
+    if @project.update_attributes(project_params)
       redirect_to projects_path
     else
       render :edit
