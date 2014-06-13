@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.sava
+    if @project.save
       flash[:yay] = 'Yay! New project is created!'
       redirect_to projects_path
     else
